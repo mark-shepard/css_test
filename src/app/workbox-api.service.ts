@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 export class WorkboxApiService {
 
   //private properties
-  private baseUrl = "http://localhost:4200";
+  private baseUrl = "https://demo.imsitest.com";
   private mockUrl = "http://localhost:3000";
 
   constructor( private httpClient: HttpClient ) { }
@@ -22,6 +22,7 @@ export class WorkboxApiService {
   //wrappers go here --<
 
   private sendGetRequest( method: String, info: HttpParams ): Observable<any> {
-    return this.httpClient.get<any>( this.baseUrl+ '/' + method, { params: info } );
+    //return this.httpClient.get<any>( this.baseUrl+ '/' + method, { params: info } );
+    return this.httpClient.get<any>( '/' + method, { params: info } );
   }
 }
